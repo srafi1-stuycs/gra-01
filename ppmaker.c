@@ -13,15 +13,15 @@ int main() {
     char buffer[256];
     buffer[0] = 0;
     strcat(buffer, "P3\n");
-    strcat(buffer, "500 500\n");
+    strcat(buffer, "510 510\n");
     strcat(buffer, "255\n");
     write(ppm_file, buffer, strlen(buffer));
 
     // print out each pixel
     int x, y;
-    for(y = 0; y < 500; y++) {
-        for(x = 0; x < 500; x++) {
-            strcpy(buffer, "0 255 0 ");
+    for(y = 0; y < 510; y++) {
+        for(x = 0; x < 510; x++) {
+            sprintf(buffer, "%d %d %d ", x/2, y/2, (x + y) / 2);
             write(ppm_file, buffer, strlen(buffer));
         }
         write(ppm_file, "\n", 1);
