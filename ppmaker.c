@@ -21,7 +21,7 @@ int main() {
     int x, y;
     for(y = 0; y < 510; y++) {
         for(x = 0; x < 510; x++) {
-            sprintf(buffer, "%d %d %d ", x/2, y/2, (x + y) / 2);
+            sprintf(buffer, "%d %d %d ", x/2, y/2, (x + y) / 4);
             write(ppm_file, buffer, strlen(buffer));
         }
         write(ppm_file, "\n", 1);
